@@ -1,0 +1,9 @@
+.employeeTitle {
+  display: flex;
+  justify-content: center;
+}
+
+.homeBtn {
+  display: flex;
+  justify-content: center;
+}
