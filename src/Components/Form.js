@@ -1,64 +1,164 @@
 import './Form.css'
 import { Modal } from 'tim-jnmodal-react'
 import states from '../data/states'
+import { useState } from 'react'
+import { collection, addDoc } from 'firebase/firestore'
+import { db } from '../firebase.config'
 
 export default function Form() {
+  const employeeRef = collection(db, 'Employee')
+
+  const [firstname, setFirstname] = useState('')
+  const [lastname, setLastname] = useState('')
+  const [startDate, setStartDate] = useState('')
+  const [department, setDepartment] = useState('')
+  const [dateOfBirth, setDateOfBirth] = useState('')
+  const [street, setStreet] = useState('')
+  const [city, setCity] = useState('')
+  const [state, setState] = useState('')
+  const [zipCode, setZipCode] = useState('')
+
+  const createEmployee = async (e) => {
+    e.preventDefault()
+    await addDoc(employeeRef, {
+      firstname: firstname,
+      lastname: lastname,
+      startDate: startDate,
+      department: department,
+      dateOfBirth: dateOfBirth,
+      street: street,
+      city: city,
+      state: state,
+      zipCode: zipCode,
+    })
+  }
+
   return (
     <section className="formContent">
       <h2 className="formTitle">Create Employee</h2>
-      <form className="form">
+      <form className="form" onSubmit={createEmployee}>
         <div className="formUpperPart">
-          <label>
+          <label className="formLabel">
             First Name
-            <input type="text" name="firstname" required />
+            <input
+              className="formInput"
+              type="text"
+              name="firstname"
+              onChange={(e) => {
+                setFirstname(e.target.value)
+              }}
+              required
+            />
           </label>
-          <label>
+          <label className="formLabel">
             Last Name
-            <input type="text" name="lastname" required />
+            <input
+              className="formInput"
+              type="text"
+              name="lastname"
+              onChange={(e) => {
+                setLastname(e.target.value)
+              }}
+              required
+            />
           </label>
-          <label>
+          <label className="formLabel">
             Date of Birth
-            <input type="date" name="dateOfBirth" required />
+            <input
+              className="formInput"
+              type="date"
+              name="dateOfBirth"
+              onChange={(e) => {
+                setDateOfBirth(e.target.value)
+              }}
+              required
+            />
           </label>
-          <label>
+          <label className="formLabel">
             Start Date
-            <input type="date" name="startDate" required />
+            <input
+              className="formInput"
+              type="date"
+              name="startDate"
+              onChange={(e) => {
+                setStartDate(e.target.value)
+              }}
+              required
+            />
           </label>
         </div>
         <div className="fieldset">
-          <label>
+          <label className="formLabel">
             Street
-            <input type="text" name="street" required />
+            <input
+              className="formInput"
+              type="text"
+              name="street"
+              onChange={(e) => {
+                setStreet(e.target.value)
+              }}
+              required
+            />
           </label>
-          <label>
+          <label className="formLabel">
             City
-            <input type="text" name="city" required />
+            <input
+              className="formInput"
+              type="text"
+              name="city"
+              onChange={(e) => {
+                setCity(e.target.value)
+              }}
+              required
+            />
           </label>
-          <label>
+          <label className="formLabel">
             State
-            <select>
+            <select
+              className="formSelect"
+              onChange={(e) => {
+                setState(e.target.value)
+              }}
+              required
+            >
+              <option value=""></option>
               {states.map((state, index) => {
                 return (
-                  <option key={index} value={state.name}>
+                  <option key={index} value={state.abbreviation}>
                     {state.name}
                   </option>
                 )
               })}
             </select>
           </label>
-          <label>
+          <label className="formLabel">
             Zip Code
-            <input type="text" name="zipCode" required />
+            <input
+              className="formInput"
+              type="text"
+              name="zipCode"
+              onChange={(e) => {
+                setZipCode(e.target.value)
+              }}
+              required
+            />
           </label>
         </div>
-        <label>
+        <label className="formLabel">
           Department
-          <select>
-            <option defaultValue="sales">Sales</option>
-            <option value="marketing">Marketing</option>
-            <option value="engineering">Engineering</option>
-            <option value="humanResources">Human Resources</option>
-            <option value="legal">Legal</option>
+          <select
+            className="formSelect"
+            onChange={(e) => {
+              setDepartment(e.target.value)
+            }}
+            required
+          >
+            <option value=""></option>
+            <option value="Sales">Sales</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Engineering">Engineering</option>
+            <option value="Human Resources">Human Resources</option>
+            <option value="Legal">Legal</option>
           </select>
         </label>
         <Modal

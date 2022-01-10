@@ -1,0 +1,40 @@
+.dataTable {
+  max-width: 989px;
+  margin: auto;
+}
+
+.dataTableUpperPart {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.searchBar {
+  display: flex;
+  flex-direction: row;
+}
+
+.searchBarLabel {
+  margin-right: 7px;
+}
+
+@media (max-width: 425px) {
+  .searchBarInput {
+    max-width: 100px;
+  }
+}
+
+.sorting {
+  padding: 10px 14px;
+  white-space: nowrap;
+}
+
+.odd td {
+  padding: 8px 10px;
+  white-space: nowrap;
+}
+
+.employeeTable {
+  margin: auto;
+}
