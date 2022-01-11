@@ -7,9 +7,9 @@ import { Link } from 'react-router-dom'
 
 export default function DataTable() {
   const [employees, setEmployees] = useState([])
+  const employeeRef = collection(db, 'Employee')
 
   useEffect(() => {
-    const employeeRef = collection(db, 'Employee')
     const getEmployee = async () => {
       const data = await getDocs(employeeRef)
       setEmployees(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
