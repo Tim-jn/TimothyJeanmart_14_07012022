@@ -1,9 +1,9 @@
 import './Form.css'
 import { Modal } from 'tim-jnmodal-react'
-import states from '../data/states'
+import states from '../../data/states'
 import { useState } from 'react'
 import { collection, addDoc } from 'firebase/firestore'
-import { db } from '../firebase.config'
+import { db } from '../../firebase.config'
 
 export default function Form() {
   const employeeRef = collection(db, 'Employee')

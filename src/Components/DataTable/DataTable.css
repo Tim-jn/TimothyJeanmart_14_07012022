@@ -1,0 +1,25 @@
+.employeeTitle {
+  display: flex;
+  justify-content: center;
+}
+
+.homeBtn {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.table-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.table-footer span {
+  padding: 5px !important;
+}
+
+.dataTable {
+  max-width: 1100px;
+  margin: auto;
+}

@@ -1,15 +1,9 @@
-import { Link } from 'react-router-dom'
-import DataTable from '../Components/DataTable'
-import './Employee.css'
+import DataTable from '../Components/DataTable/DataTable'
 
 export default function Employee() {
   return (
-    <section>
-      <h1 className="employeeTitle">Current Employees</h1>
+    <main>
       <DataTable />
-      <Link className="homeBtn" to="/">
-        Home
-      </Link>
-    </section>
+    </main>
   )
 }
