@@ -1,10 +1,12 @@
 import './Form.css'
-// import { Modal } from 'tim-jnmodal-react'
 import states from '../../data/states'
 import { useState } from 'react'
 import { useGlobalState } from '../../state'
+import { Modal } from '@tim-jn/react-modal/dist'
+import React from 'react'
 
 export default function Form() {
+  window.React = React
   const [employees, setEmployees] = useGlobalState('employee')
 
   const [addFromData, setAddFormData] = useState({
@@ -31,6 +33,8 @@ export default function Form() {
     setAddFormData(newFormData)
   }
 
+  const [isValid, setIsValid] = useState(false)
+
   const handleAddFormSubmit = (e) => {
     e.preventDefault()
 
@@ -48,6 +52,7 @@ export default function Form() {
 
     const newEmployees = [...employees, newEmployee]
     setEmployees(newEmployees)
+    setIsValid(true)
   }
 
   return (
@@ -162,10 +167,11 @@ export default function Form() {
             <option value="Legal">Legal</option>
           </select>
         </label>
-        <button className="btn-modal" type="submit">
+        <button type="submit" className="btn-modal">
           Save
         </button>
       </form>
+      {isValid ? <Modal text="Employee Created !" /> : ''}
     </section>
   )
 }
