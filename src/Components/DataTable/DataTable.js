@@ -1,21 +1,20 @@
 import './DataTable.css'
-import { useState, useEffect } from 'react'
-import { db } from '../../firebase.config'
-import { collection, getDocs } from 'firebase/firestore'
 import EukaDataTable from 'euka-datatables'
 import { Link } from 'react-router-dom'
+import { useGlobalState } from '../../state'
 
 export default function DataTable() {
-  const [employees, setEmployees] = useState([])
-  const employeeRef = collection(db, 'Employee')
-
-  useEffect(() => {
-    const getEmployee = async () => {
-      const data = await getDocs(employeeRef)
-      setEmployees(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-    }
-    getEmployee()
-  }, [])
+  const [employees, setEmployees] = useGlobalState(
+    'firstname',
+    'lastname',
+    'startDate',
+    'department',
+    'dateOfBirth',
+    'street',
+    'city',
+    'state',
+    'zipCode'
+  )
 
   let columns = [
     {

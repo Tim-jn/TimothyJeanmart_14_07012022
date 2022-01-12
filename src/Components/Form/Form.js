@@ -2,41 +2,68 @@ import './Form.css'
 import { Modal } from 'tim-jnmodal-react'
 import states from '../../data/states'
 import { useState } from 'react'
-import { collection, addDoc } from 'firebase/firestore'
-import { db } from '../../firebase.config'
+import { useGlobalState } from '../../state'
 
 export default function Form() {
-  const employeeRef = collection(db, 'Employee')
+  const [employees, setEmployees] = useGlobalState(
+    'firstname',
+    'lastname',
+    'startDate',
+    'department',
+    'dateOfBirth',
+    'street',
+    'city',
+    'state',
+    'zipCode'
+  )
 
-  const [firstname, setFirstname] = useState('')
-  const [lastname, setLastname] = useState('')
-  const [startDate, setStartDate] = useState('')
-  const [department, setDepartment] = useState('')
-  const [dateOfBirth, setDateOfBirth] = useState('')
-  const [street, setStreet] = useState('')
-  const [city, setCity] = useState('')
-  const [state, setState] = useState('')
-  const [zipCode, setZipCode] = useState('')
+  const [addFromData, setAddFormData] = useState({
+    firstname: '',
+    lastname: '',
+    startDate: '',
+    department: '',
+    dateOfBirth: '',
+    street: '',
+    city: '',
+    state: '',
+    zipCode: '',
+  })
 
-  const createEmployee = async (e) => {
+  const handleAddFormChange = (e) => {
     e.preventDefault()
-    await addDoc(employeeRef, {
-      firstname: firstname,
-      lastname: lastname,
-      startDate: startDate,
-      department: department,
-      dateOfBirth: dateOfBirth,
-      street: street,
-      city: city,
-      state: state,
-      zipCode: zipCode,
-    })
+
+    const fieldName = e.target.getAttribute('name')
+    const fieldValue = e.target.value
+
+    const newFormData = { ...addFromData }
+    newFormData[fieldName] = fieldValue
+
+    setAddFormData(newFormData)
+  }
+
+  const handleAddFormSubmit = (e) => {
+    e.preventDefault()
+
+    const newEmployee = {
+      firstname: addFromData.firstname,
+      lastname: addFromData.lastname,
+      startDate: addFromData.startDate,
+      department: addFromData.department,
+      dateOfBirth: addFromData.dateOfBirth,
+      street: addFromData.street,
+      city: addFromData.city,
+      state: addFromData.state,
+      zipCode: addFromData.zipCode,
+    }
+
+    const newEmployees = [...employees, newEmployee]
+    setEmployees(newEmployees)
   }
 
   return (
     <section className="formContent">
       <h2 className="formTitle">Create Employee</h2>
-      <form className="form" onSubmit={createEmployee}>
+      <form className="form" onSubmit={handleAddFormSubmit}>
         <div className="formUpperPart">
           <label className="formLabel">
             First Name
@@ -44,9 +71,7 @@ export default function Form() {
               className="formInput"
               type="text"
               name="firstname"
-              onChange={(e) => {
-                setFirstname(e.target.value)
-              }}
+              onChange={handleAddFormChange}
               required
             />
           </label>
@@ -56,9 +81,7 @@ export default function Form() {
               className="formInput"
               type="text"
               name="lastname"
-              onChange={(e) => {
-                setLastname(e.target.value)
-              }}
+              onChange={handleAddFormChange}
               required
             />
           </label>
@@ -68,9 +91,7 @@ export default function Form() {
               className="formInput"
               type="date"
               name="dateOfBirth"
-              onChange={(e) => {
-                setDateOfBirth(e.target.value)
-              }}
+              onChange={handleAddFormChange}
               required
             />
           </label>
@@ -80,9 +101,7 @@ export default function Form() {
               className="formInput"
               type="date"
               name="startDate"
-              onChange={(e) => {
-                setStartDate(e.target.value)
-              }}
+              onChange={handleAddFormChange}
               required
             />
           </label>
@@ -94,9 +113,7 @@ export default function Form() {
               className="formInput"
               type="text"
               name="street"
-              onChange={(e) => {
-                setStreet(e.target.value)
-              }}
+              onChange={handleAddFormChange}
               required
             />
           </label>
@@ -106,9 +123,7 @@ export default function Form() {
               className="formInput"
               type="text"
               name="city"
-              onChange={(e) => {
-                setCity(e.target.value)
-              }}
+              onChange={handleAddFormChange}
               required
             />
           </label>
@@ -116,9 +131,7 @@ export default function Form() {
             State
             <select
               className="formSelect"
-              onChange={(e) => {
-                setState(e.target.value)
-              }}
+              onChange={handleAddFormChange}
               required
             >
               <option value=""></option>
@@ -137,9 +150,7 @@ export default function Form() {
               className="formInput"
               type="text"
               name="zipCode"
-              onChange={(e) => {
-                setZipCode(e.target.value)
-              }}
+              onChange={handleAddFormChange}
               required
             />
           </label>
@@ -148,9 +159,7 @@ export default function Form() {
           Department
           <select
             className="formSelect"
-            onChange={(e) => {
-              setDepartment(e.target.value)
-            }}
+            onChange={handleAddFormChange}
             required
           >
             <option value=""></option>
