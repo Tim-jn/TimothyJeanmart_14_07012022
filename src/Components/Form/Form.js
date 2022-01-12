@@ -1,5 +1,5 @@
 import './Form.css'
-import { Modal } from 'tim-jnmodal-react'
+// import { Modal } from 'tim-jnmodal-react'
 import states from '../../data/states'
 import { useState } from 'react'
 import { useGlobalState } from '../../state'
@@ -162,12 +162,12 @@ export default function Form() {
             <option value="Legal">Legal</option>
           </select>
         </label>
-        <Modal
+        {/* <Modal
           type="submit"
           openBtn="Save"
           modalText="Employee Created !"
           modalBtn="Close"
-        />
+        /> */}
       </form>
     </section>
   )
