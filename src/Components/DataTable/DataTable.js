@@ -4,17 +4,7 @@ import { Link } from 'react-router-dom'
 import { useGlobalState } from '../../state'
 
 export default function DataTable() {
-  const [employees, setEmployees] = useGlobalState(
-    'firstname',
-    'lastname',
-    'startDate',
-    'department',
-    'dateOfBirth',
-    'street',
-    'city',
-    'state',
-    'zipCode'
-  )
+  const [employees, setEmployees] = useGlobalState('employee')
 
   let columns = [
     {

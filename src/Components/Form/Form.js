@@ -5,17 +5,7 @@ import { useState } from 'react'
 import { useGlobalState } from '../../state'
 
 export default function Form() {
-  const [employees, setEmployees] = useGlobalState(
-    'firstname',
-    'lastname',
-    'startDate',
-    'department',
-    'dateOfBirth',
-    'street',
-    'city',
-    'state',
-    'zipCode'
-  )
+  const [employees, setEmployees] = useGlobalState('employee')
 
   const [addFromData, setAddFormData] = useState({
     firstname: '',
@@ -131,6 +121,7 @@ export default function Form() {
             State
             <select
               className="formSelect"
+              name="state"
               onChange={handleAddFormChange}
               required
             >
@@ -159,6 +150,7 @@ export default function Form() {
           Department
           <select
             className="formSelect"
+            name="department"
             onChange={handleAddFormChange}
             required
           >

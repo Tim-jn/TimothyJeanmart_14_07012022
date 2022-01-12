@@ -1,15 +1,7 @@
 import { createGlobalState } from 'react-hooks-global-state'
 
-export const initialState = {
-  firstname: '',
-  lastname: '',
-  startDate: '',
-  department: '',
-  dateOfBirth: '',
-  street: '',
-  city: '',
-  state: '',
-  zipCode: '',
+const initialState = {
+  employee: '',
 }
 
 const { useGlobalState } = createGlobalState(initialState)
