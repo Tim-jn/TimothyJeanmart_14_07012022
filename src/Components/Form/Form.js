@@ -162,12 +162,9 @@ export default function Form() {
             <option value="Legal">Legal</option>
           </select>
         </label>
-        {/* <Modal
-          type="submit"
-          openBtn="Save"
-          modalText="Employee Created !"
-          modalBtn="Close"
-        /> */}
+        <button className="btn-modal" type="submit">
+          Save
+        </button>
       </form>
     </section>
   )
