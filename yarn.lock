@@ -1536,10 +1536,10 @@
   dependencies:
     "@babel/runtime" "^7.12.5"
 
-"@tim-jn/react-modal@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@tim-jn/react-modal/-/react-modal-1.1.1.tgz#61d7c8db739fed8482750c133a425a57cbc6f3f5"
-  integrity sha512-tpo48j6BZAwn8QGQjsARDZk4Yj6YaNCgy1j8cUytoG2DRQC/Jly6kwOCAxjxRCsFeegiJ9YwyOC25WrPGf9yqQ==
+"@tim-jn/react-modal@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@tim-jn/react-modal/-/react-modal-2.0.0.tgz#074cf611ac7a0bdf51d458792ce9e86c5621cbb6"
+  integrity sha512-wli80O3ae9hQQLjhL6SNkB2PfAYmKVQzR74gDUT94pv5eEfgscMep7/ISzX95dQMYRy5v3cyXQkplKB6+KeKEA==
   dependencies:
     "@babel/polyfill" "^7.12.1"
     "@testing-library/jest-dom" "^5.16.1"
