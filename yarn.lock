@@ -1015,7 +1015,7 @@
     "@babel/helper-validator-option" "^7.16.7"
     "@babel/plugin-transform-typescript" "^7.16.7"
 
-"@babel/runtime-corejs3@^7.10.2":
+"@babel/runtime-corejs3@^7.10.2", "@babel/runtime-corejs3@^7.16.8":
   version "7.16.8"
   resolved "https://registry.yarnpkg.com/@babel/runtime-corejs3/-/runtime-corejs3-7.16.8.tgz#ea533d96eda6fdc76b1812248e9fbd0c11d4a1a7"
   integrity sha512-3fKhuICS1lMz0plI5ktOE/yEtBRMVxplzRkdn6mJQ197XiY0JnrzYV0+Mxozq3JZ8SBV9Ecurmw1XsGbwOf+Sg==
@@ -1536,15 +1536,17 @@
   dependencies:
     "@babel/runtime" "^7.12.5"
 
-"@tim-jn/react-modal@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@tim-jn/react-modal/-/react-modal-2.0.0.tgz#074cf611ac7a0bdf51d458792ce9e86c5621cbb6"
-  integrity sha512-wli80O3ae9hQQLjhL6SNkB2PfAYmKVQzR74gDUT94pv5eEfgscMep7/ISzX95dQMYRy5v3cyXQkplKB6+KeKEA==
+"@tim-jn/react-modal@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@tim-jn/react-modal/-/react-modal-2.0.2.tgz#5b442c44109a501a00bf0aefe49c9601e69e85d7"
+  integrity sha512-4blkj803x1Z793RKVqybZPkIU4BylFosuriK0S6SjrNwc2lj4us1fokFI7xh1CZGKGmCzixZCh08udBDzHVICA==
   dependencies:
     "@babel/polyfill" "^7.12.1"
+    "@babel/runtime-corejs3" "^7.16.8"
     "@testing-library/jest-dom" "^5.16.1"
     "@testing-library/react" "^12.1.2"
     "@testing-library/user-event" "^13.5.0"
+    core-js "^3.20.2"
     react "^17.0.2"
     react-dom "^17.0.2"
     react-scripts "5.0.0"
@@ -2960,7 +2962,7 @@ core-js@^2.6.5:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.12.tgz#d9333dfa7b065e347cc5682219d6f690859cc2ec"
   integrity sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==
 
-core-js@^3.19.2:
+core-js@^3.19.2, core-js@^3.20.2:
   version "3.20.2"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.20.2.tgz#46468d8601eafc8b266bd2dd6bf9dee622779581"
   integrity sha512-nuqhq11DcOAbFBV4zCbKeGbKQsUDRqTX0oqx7AttUBuqe3h20ixsE039QHelbL6P4h+9kytVqyEtyZ6gsiwEYw==
