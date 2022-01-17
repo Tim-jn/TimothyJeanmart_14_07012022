@@ -6,7 +6,6 @@ import React from 'react'
 import { Modal } from '@tim-jn/react-modal/dist'
 
 export default function Form() {
-  window.React = React
   const [employees, setEmployees] = useGlobalState('employee')
 
   const [addFromData, setAddFormData] = useState({

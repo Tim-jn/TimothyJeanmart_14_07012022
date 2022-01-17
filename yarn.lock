@@ -1536,10 +1536,10 @@
   dependencies:
     "@babel/runtime" "^7.12.5"
 
-"@tim-jn/react-modal@^2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@tim-jn/react-modal/-/react-modal-2.0.2.tgz#5b442c44109a501a00bf0aefe49c9601e69e85d7"
-  integrity sha512-4blkj803x1Z793RKVqybZPkIU4BylFosuriK0S6SjrNwc2lj4us1fokFI7xh1CZGKGmCzixZCh08udBDzHVICA==
+"@tim-jn/react-modal@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@tim-jn/react-modal/-/react-modal-2.1.0.tgz#44930db13009177e684889ae927e2e1d984bb2f5"
+  integrity sha512-xhGNDx0UG8btemTVOIS93UWxKZ7NZK5LLfYIA6j2GDm4/bOKXLBRhQ874O8TtMi49g02sJ+H7rHjZamR8cKxsw==
   dependencies:
     "@babel/polyfill" "^7.12.1"
     "@babel/runtime-corejs3" "^7.16.8"
@@ -1547,6 +1547,7 @@
     "@testing-library/react" "^12.1.2"
     "@testing-library/user-event" "^13.5.0"
     core-js "^3.20.2"
+    prop-types "^15.8.1"
     react "^17.0.2"
     react-dom "^17.0.2"
     react-scripts "5.0.0"
@@ -6814,7 +6815,7 @@ prompts@^2.0.1, prompts@^2.4.2:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.7.2:
+prop-types@^15.7.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
