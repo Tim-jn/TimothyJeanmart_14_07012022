@@ -1,16 +1,20 @@
-# HRNet - Wealth Health
+# HRNet
 
-Internal web application, called HRNet, which manages employee records.
+## Intitulé du projet
+Faites passer une librairie jQuery vers React
 
-## Installation
+## [Live demo](https://timjn-hrnet.netlify.app/)
 
-- Download this project and open the folder
+## Languages utilisés 
+ - React 
+ 
+## Compétences évaluées
+- Refondre une application pour réduire la dette technique
+- Analyser la performance d'une application web
+- Déployer une application front-end
+- Programmer en JavaScript avec la programmation fonctionnelle
 
-- To install the dependencies, you can use [npm](https://npmjs.org/) or [yarn](https://yarnpkg.com):
+## Plugin converti (modale)
 
-  $ npm install
-  $ yarn install
-
-## Live demo
-
-- [Live demo](https://wealthhealth.netlify.app/)
+- [Package npm](https://www.npmjs.com/package/@tim-jn/react-modal)
+- [GitHub repository](https://github.com/Tim-jn/TimothyJeanmart_14_07012022_React_modal)
