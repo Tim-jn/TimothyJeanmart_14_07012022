@@ -7,7 +7,7 @@ Faites passer une librairie jQuery vers React
 
 ## Résumé de la mission 
 
-Dans ce projet, il nous est demandé de convertir l'application HRNet de jQuery vers React. Il faut également convertir l'un des quatre plugins jQuery actuels en React, de remplacer les 3 plugins jQuery restants par des composants React, et d'effectuer des tests de performance Lighthouse en comparant l'ancienne et la nouvelle application.
+Dans ce projet, il nous est demandé de convertir l'application HRNet de jQuery vers React. Il faut également convertir l'un des quatre plugins jQuery actuels en React et remplacer les 3 plugins jQuery restants par des composants React, ainsi qu'effectuer des tests de performance Lighthouse en comparant l'ancienne et la nouvelle application.
 
 ## Languages utilisés 
  - React 
